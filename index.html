@@ -1,585 +1,223 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
+
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supreet Vishnu - Storyteller of Shadows</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
+    <title>About | Supreet Vishnu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+     <style>
+        /* ===== GLOBAL STYLES ===== */
+        :root {
+            --black: #0a0708;
+            --blood: #8a0303;
+            --purple: #3d246c;
+            --ghost: #e8e9eb;
+        }
+        
         body {
+            background: var(--black);
+            color: var(--ghost);
+            font-family: 'EB Garamond', serif;
+            margin: 0;
+            line-height: 1.6;
+            background-image: url('https://example.com/path-to-texture.png');
+            background-attachment: fixed;
+        }
+        
+        h1, h2, h3 {
             font-family: 'Cormorant Garamond', serif;
-            background-color: #0a0a0a;
-            color: #e2e2e2;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
-        .title-font {
-            font-family: 'Cinzel Decorative', cursive;
-        }
-        .spooky-border {
-            border-image: linear-gradient(160deg, #4a044e 0%, #2d3436 50%, #4a044e 100%) 1;
-        }
-        .flicker {
-            animation: flicker 8s infinite alternate;
-        }
-        @keyframes drip {
-            0% { height: 0; opacity: 0; }
-            10% { opacity: 1; }
-            100% { height: 100%; opacity: 0.8; }
-        }
-        .animate-drip {
-            animation: drip 8s infinite;
-        }
-        @keyframes drip {
-            0% { height: 0; opacity: 0; }
-            10% { opacity: 1; }
-            100% { height: 100%; opacity: 0.8; }
-        }
-        .animate-drip {
-            animation: drip 8s infinite;
-        }
+        
+        /* ===== HAUNTED EFFECTS ===== */
         @keyframes flicker {
-            0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-                opacity: 1;
+            0%, 100% { opacity: 0.9; text-shadow: 0 0 10px var(--blood); }
+            50% { opacity: 0.6; text-shadow: 0 0 15px var(--purple); }
+        }
+        
+        .haunted {
+            transition: all 0.3s ease;
+        }
+        
+        .haunted:hover {
+            text-shadow: 0 0 8px var(--blood);
+            cursor: url('data:image/png;base64,iVBORw0KG...'), auto;
+        }
+        
+        /* ===== LAYOUT ===== */
+        header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--blood);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--ghost);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        
+        main {
+            min-height: 70vh;
+            padding: 4rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--blood);
+        }
+        
+        /* ===== ABOUT SECTION ===== */
+        .author-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .author-portrait {
+            border: 3px solid var(--blood);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(138, 3, 3, 0.3);
+            max-width: 100%;
+            height: auto;
+            filter: grayscale(30%) contrast(110%);
+        }
+        
+        .author-bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .author-bio p:first-child::first-letter {
+            font-size: 2.5rem;
+            color: var(--blood);
+            float: left;
+            margin-right: 0.5rem;
+            line-height: 1;
+        }
+        
+        /* ===== OUIJA CONTACT FORM ===== */
+        .contact-form {
+            margin-top: 4rem;
+            border-top: 1px dashed var(--blood);
+            padding-top: 2rem;
+        }
+        
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .contact-form h2::after {
+            content: "✜";
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            color: var(--blood);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            background: transparent;
+            border: 1px solid var(--purple);
+            color: var(--ghost);
+            padding: 0.8rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            font-family: 'EB Garamond', serif;
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+        }
+        
+        .contact-form button {
+            background: var(--purple);
+            color: var(--ghost);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background: var(--blood);
+            cursor: pointer;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .author-section {
+                grid-template-columns: 1fr;
             }
-            20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-                opacity: 0.4;
+            
+            .author-portrait {
+                max-width: 70%;
+                margin: 0 auto;
             }
         }
-    /* Glitch effect for horror ambiance */
-        @keyframes glitch {
-          0% {
-            clip: rect(0, 100%, 0, 0);
-          }
-          10% {
-            clip: rect(0, 100%, 100%, 0);
-          }
-          20% {
-            clip: rect(0, 100%, 0, 0);
-          }
-          30% {
-            clip: rect(0, 100%, 100%, 0);
-          }
-          100% {
-            clip: rect(0, 100%, 100%, 0);
-          }
-        }
-        .horrific-text {
-          font-family: 'Creepster', cursive;
-          font-size: 2em;
-          color: #ff0000;
-          animation: glitch 1s infinite;
-        }
+	
     </style>
-</head>
-<body class="min-h-screen">
-
-    <!-- Navigation -->
-    <nav class="bg-black bg-opacity-90 fixed w-full z-10 border-b border-purple-900">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="title-font text-2xl text-purple-300 hover:text-white transition">Supreet Vishnu</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="text-gray-300 hover:text-purple-300 transition">About</a>
-                <a href="#stories" class="text-gray-300 hover:text-purple-300 transition">Stories</a>
-                <a href="#art" class="text-gray-300 hover:text-purple-300 transition">Art</a>
-                <a href="#contact" class="text-gray-300 hover:text-purple-300 transition">Contact</a>
-            </div>
-            <button class="md:hidden text-gray-300">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden pt-16">
-        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e0c54b03-52b2-42ce-896b-d5f751185341.png" 
-             alt="Eerie haunted mansion at midnight with glowing windows and mist swirling around the base" 
-             class="absolute inset-0 w-full h-full object-cover z-0">
-        <div class="absolute top-1/4 right-10 w-20 h-20 opacity-70 z-10">
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9e03addd-47a9-42c3-9dce-57e0630c220b.png" alt="Semi-transparent ghost vector graphic" class="w-full h-full object-contain">
-        </div>
-        <div class="absolute bottom-1/3 left-8 w-16 h-16 opacity-60 z-10">
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0733a794-0788-43ab-a95f-ccd7f4fbdb39.png" alt="Flowing ghost spirit illustration" class="w-full h-full object-contain">
-        </div>
-        <div class="relative z-10 text-center px-4">
-            <h1 class="title-font text-5xl md:text-7xl mb-6 text-white flicker">
-                <span class="block">Welcome To My</span>
-                <span class="text-purple-300">Haunted Mansion</span>
-            </h1>
-            <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-8">
-                Where shadows tell stories and every corner hides a chilling secret...
-            </p>
-            <a href="#about" class="inline-block bg-purple-900 hover:bg-purple-800 text-white px-8 py-3 rounded-sm text-lg transition-all border border-purple-700 hover:border-white">
-                Enter If You Dare
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 px-4 bg-gradient-to-b from-black to-gray-900 relative">
-        <div class="absolute bottom-10 left-1/4 w-24 h-24 opacity-40">
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/95f3ced8-c5a5-4432-a9ff-3251e9ab89e4.png" alt="Ghostly figure composition" class="w-full h-full object-contain">
-        </div>
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="title-font text-4xl mb-12 text-center text-purple-300">About The Keeper of Shadows</h2>
-            
-            <div class="md:flex gap-12 items-center mb-16">
-                <div class="md:w-1/3 mb-8 md:mb-0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1d179880-c3e6-45b3-ab8c-2b8bce4c6b8b.png" 
-                         alt="Portrait of Supreet Vishnu, a thoughtful writer with intense eyes, sitting in a dimly lit study surrounded by books" 
-                         class="w-full h-auto spooky-border border-2 shadow-lg shadow-purple-900/50">
-                </div>
-                <div class="md:w-2/3">
-                    <p class="text-xl mb-6 leading-relaxed">
-                        I'm Supreet Vishnu, and my life? Well... it's kind of like living in a haunted mansion. Shadows dance in the corners of my mind, strange stories echo through the halls, and you'll always find a little chill in the air around me — but that's just how I like it.
-                    </p>
-                    <p class="text-xl mb-6 leading-relaxed">
-                        I'm a writer who's obsessed with the strange and the spooky. I love creating stories that make your skin crawl and your heart race — tales where nothing is quite what it seems and even the bravest might hesitate to turn the page.
-                    </p>
-                    <div class="bg-gray-800 p-6 border-l-4 border-purple-700 mt-8">
-                        <h3 class="title-font text-2xl mb-4 text-purple-300">My Creative Philosophy</h3>
-                        <p class="italic">
-                            "True horror isn't about the monster under the bed — it's about the realization that you were never alone in the room to begin with."
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 mt-12">
-                <div class="bg-gray-900 p-6 border border-gray-800 hover:border-purple-700 transition">
-                    <div class="text-purple-300 text-4xl mb-4 title-font">Writing</div>
-                    <p>Penning chilling tales that linger in your subconscious long after the last page</p>
-                </div>
-                <div class="bg-gray-900 p-6 border border-gray-800 hover:border-purple-700 transition">
-                    <div class="text-purple-300 text-4xl mb-4 title-font">Art</div>
-                    <p>Sketching the nightmares that haunt my imagination and the beauty in the grotesque</p>
-                </div>
-                <div class="bg-gray-900 p-6 border border-gray-800 hover:border-purple-700 transition">
-                    <div class="text-purple-300 text-4xl mb-4 title-font">Gaming</div>
-                    <p>Exploring digital worlds where danger lurks in every shadow and mystery awaits</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stories Section -->
-    <section id="stories" class="py-16 px-4 bg-gray-900">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="title-font text-4xl mb-4 text-center text-purple-300">Novels & Manga</h2>
-            <p class="text-center text-xl mb-12 max-w-2xl mx-auto">
-                Published works that crawl from the shadows onto your bookshelf
-            </p>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Story 1 -->
-                <div class="bg-black bg-opacity-70 border border-gray-800 hover:border-purple-700 transition group overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5551cb80-04f3-424f-95b1-f23e524fe857.png" 
-                         alt="Gothic horror novel cover featuring a haunted doll with glowing eyes" 
-                         class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="title-font text-2xl mb-2 group-hover:text-purple-300 transition">The Crying Child's Plaything</h3>
-                        <p class="text-gray-400 mb-4">Psychological Horror</p>
-                        <p class="mb-4">Antique collectors discover a doll with an unsettling history, but some toys don't like to be owned...</p>
-                        <a href="#" class="inline-block text-purple-300 hover:text-white transition">Read Story →</a>
-                    </div>
-                </div>
-                
-                <!-- Story 2 -->
-                <div class="bg-black bg-opacity-70 border border-gray-800 hover:border-purple-700 transition group overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/96f9f7c1-ebd0-4fef-a41b-f773d6e5b9e5.png" 
-                         alt="Ancient leather-bound book with rusted metal clasp floating above an altar" 
-                         class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="title-font text-2xl mb-2 group-hover:text-purple-300 transition">The Librarian's Last Chapter</h3>
-                        <p class="text-gray-400 mb-4">Supernatural Mystery</p>
-                        <p class="mb-4">A university librarian stumbles upon a text that should never have been cataloged, with words that rearrange themselves...</p>
-                        <a href="#" class="inline-block text-purple-300 hover:text-white transition">Read Story →</a>
-                    </div>
-                </div>
-                
-                <!-- Story 3 -->
-                <div class="bg-black bg-opacity-70 border border-gray-800 hover:border-purple-700 transition group overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cce83502-8556-4288-a814-f78657c757e0.png" 
-                         alt="Run-down asylum hallway with flickering lights and shadowy figure at the far end" 
-                         class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="title-font text-2xl mb-2 group-hover:text-purple-300 transition">Northwood Asylum</h3>
-                        <p class="text-gray-400 mb-4">Gothic Horror</p>
-                        <p class="mb-4">A paranormal investigator spends one night in a derelict asylum, unaware that the patients never actually left...</p>
-                        <a href="#" class="inline-block text-purple-300 hover:text-white transition">Read Story →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block border border-purple-700 hover:bg-purple-900 text-white px-6 py-3 rounded-sm transition">
-                    Explore All Stories
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Art Gallery -->
-    <section id="art" class="py-16 px-4 bg-gradient-to-b from-gray-900 to-black relative">
-        <div class="absolute top-10 left-20 w-24 h-24 opacity-50 rotate-45">
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/122a81f7-18d4-46c1-bd91-41642b9802bd.png" alt="Spider web decoration" class="w-full h-full object-contain">
-        </div>
-        <div class="absolute top-10 left-20 w-24 h-24 opacity-50 rotate-45">
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/122a81f7-18d4-46c1-bd91-41642b9802bd.png" alt="Spider web decoration" class="w-full h-full object-contain">
-        </div>
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="title-font text-4xl mb-4 text-center text-purple-300">Shadows Given Form</h2>
-            <p class="text-center text-xl mb-12 max-w-2xl mx-auto">
-                The grotesque and beautiful figments of my imagination made real
-            </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <!-- Art 1 -->
-                <div class="group relative overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/acf42752-298c-4fe9-a2f3-e9ed7d16d944.png" 
-                         alt="Pencil sketch of a faceless figure in a tattered Victorian dress emerging from an antique mirror" 
-                         class="w-full h-auto transition duration-500 group-hover:opacity-70">
-                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition p-4">
-                        <p class="text-center">"The Reflection That Follows"<br>Graphite on paper</p>
-                    </div>
-                </div>
-                
-                <!-- Art 2 -->
-                <div class="group relative overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d2012616-430b-4b60-9fc5-65a7222963ce.png" 
-                         alt="Ink drawing of a monstrous creature composed of books and scrolls in a library setting" 
-                         class="w-full h-auto transition duration-500 group-hover:opacity-70">
-                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition p-4">
-                        <p class="text-center">"The Librarian"<br>Pen and ink</p>
-                    </div>
-                </div>
-                
-                <!-- Art 3 -->
-                <div class="group relative overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/007ce102-c6cb-4dc6-a59c-3980c3bc8049.png" 
-                         alt="Digital painting of a crumbling cathedral with shadowy winged figures in the rafters" 
-                         class="w-full h-auto transition duration-500 group-hover:opacity-70">
-                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition p-4">
-                        <p class="text-center">"The Fallen Choir"<br>Digital art</p>
-                    </div>
-                </div>
-                
-                <!-- Art 4 -->
-                <div class="group relative overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b5900a1c-e485-4cc1-aeba-419eb17ff664.png" 
-                         alt="Watercolor sketch of multiple hands emerging from walls covered in occult symbols" 
-                         class="w-full h-auto transition duration-500 group-hover:opacity-70">
-                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition p-4">
-                        <p class="text-center">"The Room That Watches"<br>Watercolor and ink</p>
-                    </div>
-                </div>
-                
-                <!-- Art 5 -->
-                <div class="group relative overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f59b6454-96b7-4c62-8336-1ce1b48828f9.png" 
-                         alt="Charcoal drawing of a child's silhouette in a doorway with too many fingers gripping the frame" 
-                         class="w-full h-auto transition duration-500 group-hover:opacity-70">
-                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition p-4">
-                        <p class="text-center">"Let Me In"<br>Charcoal</p>
-                    </div>
-                </div>
-                
-                <!-- Art 6 -->
-                <div class="group relative overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ca4eec34-d1b3-468d-aec1-02d4c90b6764.png" 
-                         alt="Mixed media collage of anatomical sketches combined with architectural elements of a haunted house" 
-                         class="w-full h-auto transition duration-500 group-hover:opacity-70">
-                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition p-4">
-                        <p class="text-center">"The House That Breathes"<br>Mixed media</p>
-                    </div>
-                </div>
-                
-                <!-- Art 7 -->
-                <div class="group relative overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bf6a694a-09db-4c18-b7a6-97d78e67847c.png" 
-                         alt="Detailed sketch of an antique music box with a skeletal figure turning the crank" 
-                         class="w-full h-auto transition duration-500 group-hover:opacity-70">
-                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition p-4">
-                        <p class="text-center">"The Last Lullaby"<br>Technical pen</p>
-                    </div>
-                </div>
-                
-                <!-- Art 8 -->
-                <div class="group relative overflow-hidden">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e62f9de1-ac6e-4558-b7e1-126520300ffe.png" 
-                         alt="Digital painting of a shadowy figure with too many eyes standing at the end of a suburban hallway" 
-                         class="w-full h-auto transition duration-500 group-hover:opacity-70">
-                    <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition p-4">
-                        <p class="text-center">"It Lives in the Walls"<br>Digital painting</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="inline-block border border-purple-700 hover:bg-purple-900 text-white px-6 py-3 rounded-sm transition">
-                    View Full Gallery
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gaming Section -->
-    <section id="gaming" class="py-16 px-4 bg-black">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="title-font text-4xl mb-4 text-center text-purple-300">Dweller of Digital Shadows</h2>
-            <p class="text-center text-xl mb-12 max-w-2xl mx-auto">
-                Exploring virtual nightmares and laughing at the jump scares along the way
-            </p>
-            
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div>
-                    <h3 class="title-font text-2xl mb-6 text-purple-300">Current Obsessions</h3>
-                    <div class="space-y-6">
-                        <!-- Game 1 -->
-                        <div class="flex gap-4">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b249f9a1-1e55-4f83-a88e-f31ad2304e4b.png" 
-                                 alt="Dark fantasy video game cover featuring a gothic castle and shadowy figures" 
-                                 class="w-24 h-24 object-cover border border-gray-800">
-                            <div>
-                                <h4 class="title-font text-xl mb-1">Bloodborne Chronicles</h4>
-                                <p class="text-gray-400 mb-2">PS5 | Gothic Horror Action RPG</p>
-                                <p>Uncovering the secrets of Yharnam's cursed blood and the nightmare that lurks beneath.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Game 2 -->
-                        <div class="flex gap-4">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a8b7570-4fc7-4c72-a810-23bbee487646.png" 
-                                 alt="Survival horror game cover showing decrepit spaceship corridors with shadowy alien figures" 
-                                 class="w-24 h-24 object-cover border border-gray-800">
-                            <div>
-                                <h4 class="title-font text-xl mb-1">Dead Space Remake</h4>
-                                <p class="text-gray-400 mb-2">PC | Survival Horror</p>
-                                <p>Revisiting the horror masterpiece, still making me check dark corners before entering rooms.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Game 3 -->
-                        <div class="flex gap-4">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/81efaedc-7dfd-452a-b795-7c4f4984201e.png" 
-                                 alt="Psychological horror game cover with a disturbed-looking woman and shifting environments" 
-                                 class="w-24 h-24 object-cover border border-gray-800">
-                            <div>
-                                <h4 class="title-font text-xl mb-1">The Medium</h4>
-                                <p class="text-gray-400 mb-2">Xbox Series X | Psychological Horror</p>
-                                <p>Navigating dual realities and uncovering a terrifying family secret.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="title-font text-2xl mb-6 text-purple-300">Latest Stream Highlights</h3>
-                    <div class="bg-black bg-opacity-80 border border-gray-800 p-4 mb-6">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/92a60028-3d79-4a6b-9e4b-3db81df5e7ad.png" 
-                             alt="Streaming setup with dim lighting, horror game on screen, and Supreet's shocked reaction to a jump scare" 
-                             class="w-full h-auto mb-4">
-                        <h4 class="title-font text-xl mb-2">When Horror Games Make Me Scream Like a Child</h4>
-                        <p class="text-gray-400 mb-2">Streamed on: October 27, 2023</p>
-                        <p>My completely dignified and not-at-all embarrassing reactions to some of the best jump scares in survival horror.</p>
-                        <a href="#" class="inline-block text-purple-300 hover:text-white mt-3 transition">Watch Clip →</a>
-                    </div>
-                    <a href="#" class="inline-block border border-purple-700 hover:bg-purple-900 text-white px-6 py-2 rounded-sm text-sm transition">
-                        View All Streams
-                    </a>
-                </div>
-            </div>
-            
-            <div class="bg-gray-900 p-8 border border-gray-800">
-                <h3 class="title-font text-2xl mb-4 text-center text-purple-300">Favorite Horror Game Elements</h3>
-                <div class="grid md:grid-cols-4 gap-4 text-center">
-                    <div class="p-4 border border-gray-800">
-                        <div class="text-purple-300 text-4xl mb-2">1</div>
-                        <p>Atmospheric sound design that makes every creak terrifying</p>
-                    </div>
-                    <div class="p-4 border border-gray-800">
-                        <div class="text-purple-300 text-4xl mb-2">2</div>
-                        <p>Environmental storytelling that reveals unsettling backstories</p>
-                    </div>
-                    <div class="p-4 border border-gray-800">
-                        <div class="text-purple-300 text-4xl mb-2">3</div>
-                        <p>Limited resources that force tough survival choices</p>
-                    </div>
-                    <div class="p-4 border border-gray-800">
-                        <div class="text-purple-300 text-4xl mb-2">4</div>
-                        <p>Monsters with disturbing designs that play on primal fears</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog/Newsletter Section -->
-    <section class="py-16 px-4 bg-gradient-to-b from-black to-gray-900">
-        <div class="container mx-auto max-w-4xl">
-            <div class="md:flex gap-12">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h3 class="title-font text-2xl mb-4 text-purple-300">From My Notebook</h3>
-                    <div class="space-y-6">
-                        <div class="border-b border-gray-800 pb-6">
-                            <h4 class="title-font text-xl mb-2">Writing Character Fears That Resonate</h4>
-                            <p class="text-gray-400 mb-2">October 15, 2023</p>
-                            <p>Exploring how to craft character fears that linger with readers long after the story ends...</p>
-                            <a href="#" class="inline-block text-purple-300 hover:text-white mt-2 transition">Read More →</a>
-                        </div>
-                        <div class="border-b border-gray-800 pb-6">
-                            <h4 class="title-font text-xl mb-2">The Psychology of Jump Scares</h4>
-                            <p class="text-gray-400 mb-2">September 28, 2023</p>
-                            <p>Why we scream then laugh - the neuroscience behind horror's most divisive trope...</p>
-                            <a href="#" class="inline-block text-purple-300 hover:text-white mt-2 transition">Read More →</a>
-                        </div>
-                        <a href="#" class="inline-block border border-purple-700 hover:bg-purple-900 text-white px-6 py-2 rounded-sm text-sm transition mt-4">
-                            View All Posts
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2">
-                    <h3 class="title-font text-2xl mb-4 text-purple-300">Join My Mailing List</h3>
-                    <p class="mb-6">Get updates on new stories, art releases, and gaming streams. I only send emails when I have something truly chilling to share.</p>
-                    <form class="space-y-4">
-                        <div>
-                            <label for="name" class="block mb-2">Your Name</label>
-                            <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 p-3 focus:border-purple-700 focus:outline-none">
-                        </div>
-                        <div>
-                            <label for="email" class="block mb-2">Email Address</label>
-                            <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 p-3 focus:border-purple-700 focus:outline-none">
-                        </div>
-                        <button type="submit" class="w-full bg-purple-900 hover:bg-purple-800 text-white px-6 py-3 rounded-sm transition">
-                            Subscribe to the Haunting
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 bg-black">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="title-font text-4xl mb-4 text-center text-purple-300">Brave Enough To Reach Out?</h2>
-            <p class="text-center text-xl mb-12 max-w-2xl mx-auto">
-                Whether for collaboration, questions, or just to share your own spooky tales...
-            </p>
-            
-            <div class="md:flex gap-12">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <div class="bg-gray-900 p-8 border border-gray-800 h-full">
-                        <h3 class="title-font text-2xl mb-6 text-purple-300">Send a Message</h3>
-                        <form class="space-y-4">
-                            <div>
-                                <label for="contact-name" class="block mb-2">Name</label>
-                                <input type="text" id="contact-name" class="w-full bg-gray-800 border border-gray-700 p-3 focus:border-purple-700 focus:outline-none">
-                            </div>
-                            <div>
-                                <label for="contact-email" class="block mb-2">Email</label>
-                                <input type="email" id="contact-email" class="w-full bg-gray-800 border border-gray-700 p-3 focus:border-purple-700 focus:outline-none">
-                            </div>
-                            <div>
-                                <label for="contact-subject" class="block mb-2">Subject</label>
-                                <input type="text" id="contact-subject" class="w-full bg-gray-800 border border-gray-700 p-3 focus:border-purple-700 focus:outline-none">
-                            </div>
-                            <div>
-                                <label for="contact-message" class="block mb-2">Your Message</label>
-                                <textarea id="contact-message" rows="4" class="w-full bg-gray-800 border border-gray-700 p-3 focus:border-purple-700 focus:outline-none"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-purple-900 hover:bg-purple-800 text-white px-6 py-3 rounded-sm transition">
-                                Send Into the Void
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2">
-                    <div class="bg-gray-900 p-8 border border-gray-800 h-full">
-                        <h3 class="title-font text-2xl mb-6 text-purple-300">Other Ways To Connect</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <div class="text-purple-300 mt-1">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="title-font text-lg">Email</h4>
-                                    <a href="mailto:supreet@hauntedmansion.com" class="hover:text-purple-300 transition">supreet@hauntedmansion.com</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start gap-4">
-                                <div class="text-purple-300 mt-1">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="title-font text-lg">Social Media</h4>
-                                    <div class="flex gap-4 mt-2">
-                                        <a href="#" class="hover:text-purple-300 transition">Twitter</a>
-                                        <a href="#" class="hover:text-purple-300 transition">Instagram</a>
-                                        <a href="#" class="hover:text-purple-300 transition">Twitch</a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start gap-4">
-                                <div class="text-purple-300 mt-1">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="title-font text-lg">Warnings</h4>
-                                    <p class="mt-2">I typically respond within 3-5 days, but during full moons, responses may take slightly longer as I'm often... otherwise occupied.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black py-8 px-4 border-t border-purple-900 relative">
-        <div class="absolute bottom-4 right-8 w-14 h-14 opacity-50">
-            <svg class="absolute bottom-20 right-20 w-16 h-16 opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#7e22ce" stroke-width="1">
-                <path d="M12 2c3 0 3 5 3 5 0 2-1 4-3 4s-3-2-3-4c0 0 0-5 3-5z"/>
-                <circle cx="12" cy="14" r="5"/>
-                <path d="M9 17v2M15 17v2"/>
-            </svg>
-            <svg class="absolute bottom-20 right-20 w-16 h-16 opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#7e22ce" stroke-width="1">
-                <path d="M12 2c3 0 3 5 3 5 0 2-1 4-3 4s-3-2-3-4c0 0 0-5 3-5z"/>
-                <circle cx="12" cy="14" r="5"/>
-                <path d="M9 17v2M15 17v2"/>
-            </svg>
-            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/342c0ecb-7f8a-4ac7-b807-e84d7c5ae4a3.png" alt="Spider web corner decoration" class="w-full h-full object-contain">
-        </div>
-        <div class="container mx-auto">
-            <div class="text-center text-gray-500 text-sm">
-                <p>© 2023 Supreet Vishnu. All rights reserved.</p>
-                <p class="mt-2">All written works, art, and content contained herein are protected by copyright.</p>
-                <div class="mt-4 flex justify-center gap-6">
-                    <a href="#" class="hover:text-purple-300 transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-purple-300 transition">Terms</a>
-                    <a href="#" class="hover:text-purple-300 transition">FAQ</a>
-                </div>
-            </div>
+	<header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="haunted">HOME</a></li>
+                <li><a href="manga.html" class="haunted">MANGA</a></li>
+				
+                <li><a href="about.html" class="haunted">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+<section id="contact" class="contact-form">
+            <h2>Summon Me</h2>
+        <form action="https://formsubmit.co/chavanyash1429@gmail.com " method="POST">
+    <!-- Add these hidden fields -->
+    <input type="hidden" name="_subject" value="New summoning from your website!">
+    <input type="hidden" name="_template" value="basic">
+    <input type="text" name="name" placeholder="Your name..." required>
+    <input type="email" name="_replyto" placeholder="Your email..." required>
+    <textarea name="message" placeholder="Your message..." required></textarea>
+    <button type="submit">Send Into The Void</button>
+</form>
+        </section>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer>
+<p>© 2025 dictator's | All rights reserved</p>
+        <div class="social-links">
+            <a href="https://x.com/Suprit_43?t=0Qqk5OW3ifOQBIHZhn83qw&s=08 " class="haunted">Twitter</a> | 
+            <a href="https://www.instagram.com/suprit_vt?igsh=MTh3empnZ2l0aGhzcQ==" class="haunted">Instagram</a> 
+   
         </div>
     </footer>
 
+    <!-- OPTIONAL: GHOSTLY WHISPER EFFECT -->
+    <audio id="whisper" src="whisper.mp3" preload="auto"></audio>
     <script>
-        // Simple script for mobile menu toggle would go here
-        document.addEventListener('DOMContentLoaded', function() {
-            // This would be for a mobile menu toggle
+        document.querySelectorAll('.haunted').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                document.getElementById('whisper').currentTime = 0;
+                document.getElementById('whisper').play();
+            });
         });
     </script>
 </body>
